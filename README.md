@@ -52,6 +52,10 @@ subnet 192.168.2.0 netmask 255.255.255.0 {
         option routers 192.168.2.254;
 }
 ```
+  Then you can start the DHCP service.
+```
+/etc/init.d/dhcpd start
+```
 
 ## Step 3: Edit Kickstart and Preseed File
 You should create a **ks.cfg** file and a **preseed.cfg** file in the **/var/www/html** directory.<br>
@@ -68,7 +72,7 @@ MENU BACKGROUND backgnd.png
 timeout 5
 label Ubuntu-14.04-Server
 kernel ubuntu-installer/amd64/linux
-append vga=normal initrd=ubuntu-installer/amd64/initrd.gz ks=http://192.168.2.254/cfg/ks.cfg url=http://192.168.2.254/cfg/preseed.cfg root=/dev/rd/0 --quiet
+append vga=normal initrd=ubuntu-installer/amd64/initrd.gz ks=http://192.168.2.254/ks.cfg url=http://192.168.2.254/preseed.cfg root=/dev/rd/0 --quiet
 ```
 
 You should now be able to boot another pc on the lan over the network and have it install Ubuntu automagically Smile :) You can vary the tftp and http install points to have multiple versions of Ubuntu available to install on your network.
