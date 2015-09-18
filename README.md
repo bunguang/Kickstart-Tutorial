@@ -1,4 +1,4 @@
-# Cluster Environment Setup
+# Kickstart Tutorial
 This tutorial will show you the whole process that how to setup a new cluster environment.
 
 <!--------------------------------------------------------------------------->
